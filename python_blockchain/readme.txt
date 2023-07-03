@@ -1,4 +1,4 @@
-Install python on pc
+# Install python on pc
     3.10 or above
     
 Libraries Download:
