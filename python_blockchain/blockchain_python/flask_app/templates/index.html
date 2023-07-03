@@ -1,0 +1,40 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Wellcome Socketx testing</h1>
+    <button onClick="rec()">Socket - getDocStatisticsByDocID</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>
+    <script>
+      const socket = io("http://localhost:8090");
+
+      function rec() {
+        socket.on("getDocStatisticsByDocID", function() {
+            socket.emit('getDocStatisticsByDocID', {'profile_id': '2' , "doc_id" : '2'});
+            console.log("getDocStatisticsByDocID Socket Done ")
+        });
+      }
+    </script>
+  </body>
+</html>
+
+
+<!--   
+    socket.on('message', message() {
+            socket.emit('message', 'HELLO WORLD'); 
+        });
+        
+-->
+
+<!-- 
+    socket.on('getDocStatisticsByDocID');
+    socket.emit("getDocStatisticsByDocID", "2" , "2");
+    console.log(socket.emit('getDocStatisticsByDocID', {'profile_id': '2' , "doc_id" : '2'})) 
+-->
